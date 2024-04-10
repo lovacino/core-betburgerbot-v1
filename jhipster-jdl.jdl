@@ -56,7 +56,7 @@ entity AccountBet {
 	type AccountBetType,
 	bettingRoleType BettingRoleType,
 	bettingRoleAmount Double,
-	hourActiveActive Integer,
+	hourActiveStart Integer,
 	hourActiveEnd Integer,
 	flgActiveLun Boolean,
 	flgActiveMar Boolean,

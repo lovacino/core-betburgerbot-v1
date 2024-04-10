@@ -8,5 +8,6 @@ public enum BettingState {
     SENDING,
     SENDED,
     CONFIRMED,
+    CANCELED,
     ERROR,
 }

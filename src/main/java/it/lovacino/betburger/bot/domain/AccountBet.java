@@ -43,8 +43,8 @@ public class AccountBet implements Serializable {
     @Column(name = "betting_role_amount")
     private Double bettingRoleAmount;
 
-    @Column(name = "hour_active_active")
-    private Integer hourActiveActive;
+    @Column(name = "hour_active_start")
+    private Integer hourActiveStart;
 
     @Column(name = "hour_active_end")
     private Integer hourActiveEnd;
@@ -162,17 +162,17 @@ public class AccountBet implements Serializable {
         this.bettingRoleAmount = bettingRoleAmount;
     }
 
-    public Integer getHourActiveActive() {
-        return this.hourActiveActive;
+    public Integer getHourActiveStart() {
+        return this.hourActiveStart;
     }
 
-    public AccountBet hourActiveActive(Integer hourActiveActive) {
-        this.setHourActiveActive(hourActiveActive);
+    public AccountBet hourActiveStart(Integer hourActiveStart) {
+        this.setHourActiveStart(hourActiveStart);
         return this;
     }
 
-    public void setHourActiveActive(Integer hourActiveActive) {
-        this.hourActiveActive = hourActiveActive;
+    public void setHourActiveStart(Integer hourActiveStart) {
+        this.hourActiveStart = hourActiveStart;
     }
 
     public Integer getHourActiveEnd() {
@@ -360,7 +360,7 @@ public class AccountBet implements Serializable {
             ", type='" + getType() + "'" +
             ", bettingRoleType='" + getBettingRoleType() + "'" +
             ", bettingRoleAmount=" + getBettingRoleAmount() +
-            ", hourActiveActive=" + getHourActiveActive() +
+            ", hourActiveStart=" + getHourActiveStart() +
             ", hourActiveEnd=" + getHourActiveEnd() +
             ", flgActiveLun='" + getFlgActiveLun() + "'" +
             ", flgActiveMar='" + getFlgActiveMar() + "'" +

@@ -30,7 +30,7 @@
       "fieldType": "Double"
     },
     {
-      "fieldName": "hourActiveActive",
+      "fieldName": "hourActiveStart",
       "fieldType": "Integer"
     },
     {

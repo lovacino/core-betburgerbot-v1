@@ -55,6 +55,9 @@ public class Betting implements Serializable {
     @Column(name = "bet_burger_id")
     private String betBurgerId;
 
+    @Column(name = "error_message")
+    private String errorMessage;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "state")
     private BettingState state;
@@ -83,6 +86,14 @@ public class Betting implements Serializable {
     private BetType betType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
 
     public Long getId() {
         return this.id;

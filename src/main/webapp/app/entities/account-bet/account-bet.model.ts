@@ -10,7 +10,7 @@ export interface IAccountBet {
   type?: keyof typeof AccountBetType | null;
   bettingRoleType?: keyof typeof BettingRoleType | null;
   bettingRoleAmount?: number | null;
-  hourActiveActive?: number | null;
+  hourActiveStart?: number | null;
   hourActiveEnd?: number | null;
   flgActiveLun?: boolean | null;
   flgActiveMar?: boolean | null;

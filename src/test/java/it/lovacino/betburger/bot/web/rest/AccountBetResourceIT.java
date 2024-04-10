@@ -113,7 +113,7 @@ class AccountBetResourceIT {
             .type(DEFAULT_TYPE)
             .bettingRoleType(DEFAULT_BETTING_ROLE_TYPE)
             .bettingRoleAmount(DEFAULT_BETTING_ROLE_AMOUNT)
-            .hourActiveActive(DEFAULT_HOUR_ACTIVE_ACTIVE)
+            .hourActiveStart(DEFAULT_HOUR_ACTIVE_ACTIVE)
             .hourActiveEnd(DEFAULT_HOUR_ACTIVE_END)
             .flgActiveLun(DEFAULT_FLG_ACTIVE_LUN)
             .flgActiveMar(DEFAULT_FLG_ACTIVE_MAR)
@@ -141,7 +141,7 @@ class AccountBetResourceIT {
             .type(UPDATED_TYPE)
             .bettingRoleType(UPDATED_BETTING_ROLE_TYPE)
             .bettingRoleAmount(UPDATED_BETTING_ROLE_AMOUNT)
-            .hourActiveActive(UPDATED_HOUR_ACTIVE_ACTIVE)
+            .hourActiveStart(UPDATED_HOUR_ACTIVE_ACTIVE)
             .hourActiveEnd(UPDATED_HOUR_ACTIVE_END)
             .flgActiveLun(UPDATED_FLG_ACTIVE_LUN)
             .flgActiveMar(UPDATED_FLG_ACTIVE_MAR)
@@ -179,7 +179,7 @@ class AccountBetResourceIT {
         assertThat(testAccountBet.getType()).isEqualTo(DEFAULT_TYPE);
         assertThat(testAccountBet.getBettingRoleType()).isEqualTo(DEFAULT_BETTING_ROLE_TYPE);
         assertThat(testAccountBet.getBettingRoleAmount()).isEqualTo(DEFAULT_BETTING_ROLE_AMOUNT);
-        assertThat(testAccountBet.getHourActiveActive()).isEqualTo(DEFAULT_HOUR_ACTIVE_ACTIVE);
+        assertThat(testAccountBet.getHourActiveStart()).isEqualTo(DEFAULT_HOUR_ACTIVE_ACTIVE);
         assertThat(testAccountBet.getHourActiveEnd()).isEqualTo(DEFAULT_HOUR_ACTIVE_END);
         assertThat(testAccountBet.getFlgActiveLun()).isEqualTo(DEFAULT_FLG_ACTIVE_LUN);
         assertThat(testAccountBet.getFlgActiveMar()).isEqualTo(DEFAULT_FLG_ACTIVE_MAR);
@@ -228,7 +228,7 @@ class AccountBetResourceIT {
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
             .andExpect(jsonPath("$.[*].bettingRoleType").value(hasItem(DEFAULT_BETTING_ROLE_TYPE.toString())))
             .andExpect(jsonPath("$.[*].bettingRoleAmount").value(hasItem(DEFAULT_BETTING_ROLE_AMOUNT.doubleValue())))
-            .andExpect(jsonPath("$.[*].hourActiveActive").value(hasItem(DEFAULT_HOUR_ACTIVE_ACTIVE)))
+            .andExpect(jsonPath("$.[*].hourActiveStart").value(hasItem(DEFAULT_HOUR_ACTIVE_ACTIVE)))
             .andExpect(jsonPath("$.[*].hourActiveEnd").value(hasItem(DEFAULT_HOUR_ACTIVE_END)))
             .andExpect(jsonPath("$.[*].flgActiveLun").value(hasItem(DEFAULT_FLG_ACTIVE_LUN.booleanValue())))
             .andExpect(jsonPath("$.[*].flgActiveMar").value(hasItem(DEFAULT_FLG_ACTIVE_MAR.booleanValue())))
@@ -259,7 +259,7 @@ class AccountBetResourceIT {
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
             .andExpect(jsonPath("$.bettingRoleType").value(DEFAULT_BETTING_ROLE_TYPE.toString()))
             .andExpect(jsonPath("$.bettingRoleAmount").value(DEFAULT_BETTING_ROLE_AMOUNT.doubleValue()))
-            .andExpect(jsonPath("$.hourActiveActive").value(DEFAULT_HOUR_ACTIVE_ACTIVE))
+            .andExpect(jsonPath("$.hourActiveStart").value(DEFAULT_HOUR_ACTIVE_ACTIVE))
             .andExpect(jsonPath("$.hourActiveEnd").value(DEFAULT_HOUR_ACTIVE_END))
             .andExpect(jsonPath("$.flgActiveLun").value(DEFAULT_FLG_ACTIVE_LUN.booleanValue()))
             .andExpect(jsonPath("$.flgActiveMar").value(DEFAULT_FLG_ACTIVE_MAR.booleanValue()))
@@ -298,7 +298,7 @@ class AccountBetResourceIT {
             .type(UPDATED_TYPE)
             .bettingRoleType(UPDATED_BETTING_ROLE_TYPE)
             .bettingRoleAmount(UPDATED_BETTING_ROLE_AMOUNT)
-            .hourActiveActive(UPDATED_HOUR_ACTIVE_ACTIVE)
+            .hourActiveStart(UPDATED_HOUR_ACTIVE_ACTIVE)
             .hourActiveEnd(UPDATED_HOUR_ACTIVE_END)
             .flgActiveLun(UPDATED_FLG_ACTIVE_LUN)
             .flgActiveMar(UPDATED_FLG_ACTIVE_MAR)
@@ -328,7 +328,7 @@ class AccountBetResourceIT {
         assertThat(testAccountBet.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testAccountBet.getBettingRoleType()).isEqualTo(UPDATED_BETTING_ROLE_TYPE);
         assertThat(testAccountBet.getBettingRoleAmount()).isEqualTo(UPDATED_BETTING_ROLE_AMOUNT);
-        assertThat(testAccountBet.getHourActiveActive()).isEqualTo(UPDATED_HOUR_ACTIVE_ACTIVE);
+        assertThat(testAccountBet.getHourActiveStart()).isEqualTo(UPDATED_HOUR_ACTIVE_ACTIVE);
         assertThat(testAccountBet.getHourActiveEnd()).isEqualTo(UPDATED_HOUR_ACTIVE_END);
         assertThat(testAccountBet.getFlgActiveLun()).isEqualTo(UPDATED_FLG_ACTIVE_LUN);
         assertThat(testAccountBet.getFlgActiveMar()).isEqualTo(UPDATED_FLG_ACTIVE_MAR);
@@ -414,7 +414,7 @@ class AccountBetResourceIT {
             .name(UPDATED_NAME)
             .state(UPDATED_STATE)
             .type(UPDATED_TYPE)
-            .hourActiveActive(UPDATED_HOUR_ACTIVE_ACTIVE)
+            .hourActiveStart(UPDATED_HOUR_ACTIVE_ACTIVE)
             .flgActiveLun(UPDATED_FLG_ACTIVE_LUN)
             .flgActiveMer(UPDATED_FLG_ACTIVE_MER)
             .flgActiveGio(UPDATED_FLG_ACTIVE_GIO)
@@ -439,7 +439,7 @@ class AccountBetResourceIT {
         assertThat(testAccountBet.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testAccountBet.getBettingRoleType()).isEqualTo(DEFAULT_BETTING_ROLE_TYPE);
         assertThat(testAccountBet.getBettingRoleAmount()).isEqualTo(DEFAULT_BETTING_ROLE_AMOUNT);
-        assertThat(testAccountBet.getHourActiveActive()).isEqualTo(UPDATED_HOUR_ACTIVE_ACTIVE);
+        assertThat(testAccountBet.getHourActiveStart()).isEqualTo(UPDATED_HOUR_ACTIVE_ACTIVE);
         assertThat(testAccountBet.getHourActiveEnd()).isEqualTo(DEFAULT_HOUR_ACTIVE_END);
         assertThat(testAccountBet.getFlgActiveLun()).isEqualTo(UPDATED_FLG_ACTIVE_LUN);
         assertThat(testAccountBet.getFlgActiveMar()).isEqualTo(DEFAULT_FLG_ACTIVE_MAR);
@@ -471,7 +471,7 @@ class AccountBetResourceIT {
             .type(UPDATED_TYPE)
             .bettingRoleType(UPDATED_BETTING_ROLE_TYPE)
             .bettingRoleAmount(UPDATED_BETTING_ROLE_AMOUNT)
-            .hourActiveActive(UPDATED_HOUR_ACTIVE_ACTIVE)
+            .hourActiveStart(UPDATED_HOUR_ACTIVE_ACTIVE)
             .hourActiveEnd(UPDATED_HOUR_ACTIVE_END)
             .flgActiveLun(UPDATED_FLG_ACTIVE_LUN)
             .flgActiveMar(UPDATED_FLG_ACTIVE_MAR)
@@ -501,7 +501,7 @@ class AccountBetResourceIT {
         assertThat(testAccountBet.getType()).isEqualTo(UPDATED_TYPE);
         assertThat(testAccountBet.getBettingRoleType()).isEqualTo(UPDATED_BETTING_ROLE_TYPE);
         assertThat(testAccountBet.getBettingRoleAmount()).isEqualTo(UPDATED_BETTING_ROLE_AMOUNT);
-        assertThat(testAccountBet.getHourActiveActive()).isEqualTo(UPDATED_HOUR_ACTIVE_ACTIVE);
+        assertThat(testAccountBet.getHourActiveStart()).isEqualTo(UPDATED_HOUR_ACTIVE_ACTIVE);
         assertThat(testAccountBet.getHourActiveEnd()).isEqualTo(UPDATED_HOUR_ACTIVE_END);
         assertThat(testAccountBet.getFlgActiveLun()).isEqualTo(UPDATED_FLG_ACTIVE_LUN);
         assertThat(testAccountBet.getFlgActiveMar()).isEqualTo(UPDATED_FLG_ACTIVE_MAR);

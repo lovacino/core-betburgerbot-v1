@@ -140,8 +140,8 @@ public class AccountBetResource {
                 if (accountBet.getBettingRoleAmount() != null) {
                     existingAccountBet.setBettingRoleAmount(accountBet.getBettingRoleAmount());
                 }
-                if (accountBet.getHourActiveActive() != null) {
-                    existingAccountBet.setHourActiveActive(accountBet.getHourActiveActive());
+                if (accountBet.getHourActiveStart() != null) {
+                    existingAccountBet.setHourActiveStart(accountBet.getHourActiveStart());
                 }
                 if (accountBet.getHourActiveEnd() != null) {
                     existingAccountBet.setHourActiveEnd(accountBet.getHourActiveEnd());

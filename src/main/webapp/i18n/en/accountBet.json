@@ -23,7 +23,7 @@
       "type": "Type",
       "bettingRoleType": "Betting Role Type",
       "bettingRoleAmount": "Betting Role Amount",
-      "hourActiveActive": "Hour Active Active",
+      "hourActiveStart": "Hour Active Active",
       "hourActiveEnd": "Hour Active End",
       "flgActiveLun": "Flg Active Lun",
       "flgActiveMar": "Flg Active Mar",

@@ -1,5 +1,6 @@
 package it.lovacino.betburger.bot.domain;
 
+import it.lovacino.betburger.bot.domain.enumeration.BetArrow;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
@@ -69,6 +70,10 @@ public class EventSource implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private BetType betType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "arrow")
+    private BetArrow arrow;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -291,6 +296,14 @@ public class EventSource implements Serializable {
     public EventSource betType(BetType betType) {
         this.setBetType(betType);
         return this;
+    }
+
+    public BetArrow getArrow() {
+        return arrow;
+    }
+
+    public void setArrow(BetArrow arrow) {
+        this.arrow = arrow;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

@@ -26,7 +26,7 @@ type AccountBetFormGroupContent = {
   type: FormControl<IAccountBet['type']>;
   bettingRoleType: FormControl<IAccountBet['bettingRoleType']>;
   bettingRoleAmount: FormControl<IAccountBet['bettingRoleAmount']>;
-  hourActiveActive: FormControl<IAccountBet['hourActiveActive']>;
+  hourActiveStart: FormControl<IAccountBet['hourActiveStart']>;
   hourActiveEnd: FormControl<IAccountBet['hourActiveEnd']>;
   flgActiveLun: FormControl<IAccountBet['flgActiveLun']>;
   flgActiveMar: FormControl<IAccountBet['flgActiveMar']>;
@@ -63,7 +63,7 @@ export class AccountBetFormService {
       type: new FormControl(accountBetRawValue.type),
       bettingRoleType: new FormControl(accountBetRawValue.bettingRoleType),
       bettingRoleAmount: new FormControl(accountBetRawValue.bettingRoleAmount),
-      hourActiveActive: new FormControl(accountBetRawValue.hourActiveActive),
+      hourActiveStart: new FormControl(accountBetRawValue.hourActiveStart),
       hourActiveEnd: new FormControl(accountBetRawValue.hourActiveEnd),
       flgActiveLun: new FormControl(accountBetRawValue.flgActiveLun),
       flgActiveMar: new FormControl(accountBetRawValue.flgActiveMar),

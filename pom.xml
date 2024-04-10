@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>it.lovacino.betburger.bot</groupId>
-    <artifactId>bet-burger-bot</artifactId>
+    <artifactId>core-betburgerbot-v1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Bet Burger Bot</name>
+    <name>core-betburgerbot-v1</name>
     <description>Description for Bet Burger Bot</description>
 
     <properties>
@@ -87,6 +87,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
         <dependency>
             <groupId>tech.jhipster</groupId>
             <artifactId>jhipster-framework</artifactId>
