@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "betBurgerBot",
+    "clientFramework": "angular",
+    "devServerPort": 4200,
+    "entities": ["Bookmaker", "AccountBet", "ConfigParam", "Sport", "BetType", "Period", "EventSource", "Betting"],
+    "jhipsterVersion": "8.1.0",
+    "jwtSecretKey": "NTA1ZjY3YzkxNDExZTBjYjBhN2NlZjY1ZmIyMzE1ZDM4NjE5YTAzZmRlY2YwZWQwOTBiODdhODMwZDBiMzBhZDk3YThmNmU2MDFkNjI5MDlkZDFhMmNmNTdkODY5ZmM0OTIyOWU4OWU2NjY3ZmViM2JlMDEyNjIyZDQzYmJiMGY=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1712783314000,
+    "nativeLanguage": "en",
+    "packageFolder": "it/lovacino/betburger/bot",
+    "packageName": "it.lovacino.betburger.bot",
+    "prodDatabaseType": "mysql"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "betBurgerBotApp": {
+    "betting": {
+      "home": {
+        "title": "Bettings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Betting",
+        "createOrEditLabel": "Create or edit a Betting",
+        "notFound": "No Bettings found"
+      },
+      "created": "A new Betting is created with identifier {{ param }}",
+      "updated": "A Betting is updated with identifier {{ param }}",
+      "deleted": "A Betting is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Betting {{ id }}?"
+      },
+      "detail": {
+        "title": "Betting"
+      },
+      "id": "ID",
+      "eventSourceId": "Event Source Id",
+      "betTypeParam": "Bet Type Param",
+      "koef": "Koef",
+      "home": "Home",
+      "away": "Away",
+      "league": "League",
+      "eventName": "Event Name",
+      "startedAt": "Started At",
+      "updatedAt": "Updated At",
+      "betBurgerId": "Bet Burger Id",
+      "state": "State",
+      "amountBet": "Amount Bet",
+      "amountBetWin": "Amount Bet Win",
+      "betResultType": "Bet Result Type",
+      "account": "Account",
+      "sport": "Sport",
+      "period": "Period",
+      "betType": "Bet Type"
+    }
+  }
+}

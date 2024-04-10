@@ -1,0 +1,110 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (eventSource) {
+      <div>
+        <h2 data-cy="eventSourceDetailsHeading"><span jhiTranslate="betBurgerBotApp.eventSource.detail.title">Event Source</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ eventSource.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.home">Home</span></dt>
+          <dd>
+            <span>{{ eventSource.home }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.away">Away</span></dt>
+          <dd>
+            <span>{{ eventSource.away }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.league">League</span></dt>
+          <dd>
+            <span>{{ eventSource.league }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.eventName">Event Name</span></dt>
+          <dd>
+            <span>{{ eventSource.eventName }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.bookmakerEventId">Bookmaker Event Id</span></dt>
+          <dd>
+            <span>{{ eventSource.bookmakerEventId }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.betTypeParam">Bet Type Param</span></dt>
+          <dd>
+            <span>{{ eventSource.betTypeParam }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.koefLastModifiedAt">Koef Last Modified At</span></dt>
+          <dd>
+            <span>{{ eventSource.koefLastModifiedAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.scannedAt">Scanned At</span></dt>
+          <dd>
+            <span>{{ eventSource.scannedAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.startedAt">Started At</span></dt>
+          <dd>
+            <span>{{ eventSource.startedAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.updatedAt">Updated At</span></dt>
+          <dd>
+            <span>{{ eventSource.updatedAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.betBurgerId">Bet Burger Id</span></dt>
+          <dd>
+            <span>{{ eventSource.betBurgerId }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.koef">Koef</span></dt>
+          <dd>
+            <span>{{ eventSource.koef }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.bookmaker">Bookmaker</span></dt>
+          <dd>
+            @if (eventSource.bookmaker) {
+              <div>
+                <a [routerLink]="['/bookmaker', eventSource.bookmaker.id, 'view']">{{ eventSource.bookmaker.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.sport">Sport</span></dt>
+          <dd>
+            @if (eventSource.sport) {
+              <div>
+                <a [routerLink]="['/sport', eventSource.sport.id, 'view']">{{ eventSource.sport.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.period">Period</span></dt>
+          <dd>
+            @if (eventSource.period) {
+              <div>
+                <a [routerLink]="['/period', eventSource.period.id, 'view']">{{ eventSource.period.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.eventSource.betType">Bet Type</span></dt>
+          <dd>
+            @if (eventSource.betType) {
+              <div>
+                <a [routerLink]="['/bet-type', eventSource.betType.id, 'view']">{{ eventSource.betType.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/event-source', eventSource.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

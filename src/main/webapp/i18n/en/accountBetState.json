@@ -1,0 +1,10 @@
+{
+  "betBurgerBotApp": {
+    "AccountBetState": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "INACTIVE": "INACTIVE",
+      "CLOSED": "CLOSED"
+    }
+  }
+}

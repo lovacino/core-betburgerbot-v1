@@ -1,0 +1,232 @@
+<div>
+  <h2 id="page-heading" data-cy="EventSourceHeading">
+    <span jhiTranslate="betBurgerBotApp.eventSource.home.title">Translation missing for betBurgerBotApp.eventSource.home.title</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="betBurgerBotApp.eventSource.home.refreshListLabel"
+          >Translation missing for betBurgerBotApp.eventSource.home.refreshListLabel</span
+        >
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-event-source"
+        [routerLink]="['/event-source/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="betBurgerBotApp.eventSource.home.createLabel"
+          >Translation missing for betBurgerBotApp.eventSource.home.createLabel</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (eventSources?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="betBurgerBotApp.eventSource.home.notFound"
+        >Translation missing for betBurgerBotApp.eventSource.home.notFound</span
+      >
+    </div>
+  }
+
+  @if (eventSources && eventSources.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="home">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.home">Home</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="away">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.away">Away</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="league">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.league">League</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="eventName">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.eventName">Event Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="bookmakerEventId">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.bookmakerEventId">Bookmaker Event Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="betTypeParam">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.betTypeParam">Bet Type Param</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="koefLastModifiedAt">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.koefLastModifiedAt">Koef Last Modified At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="scannedAt">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.scannedAt">Scanned At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="startedAt">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.startedAt">Started At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedAt">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.updatedAt">Updated At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="betBurgerId">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.betBurgerId">Bet Burger Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="koef">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.koef">Koef</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="bookmaker.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.bookmaker">Bookmaker</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sport.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.sport">Sport</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="period.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.period">Period</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="betType.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.eventSource.betType">Bet Type</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (eventSource of eventSources; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/event-source', eventSource.id, 'view']">{{ eventSource.id }}</a>
+              </td>
+              <td>{{ eventSource.home }}</td>
+              <td>{{ eventSource.away }}</td>
+              <td>{{ eventSource.league }}</td>
+              <td>{{ eventSource.eventName }}</td>
+              <td>{{ eventSource.bookmakerEventId }}</td>
+              <td>{{ eventSource.betTypeParam }}</td>
+              <td>{{ eventSource.koefLastModifiedAt | formatMediumDatetime }}</td>
+              <td>{{ eventSource.scannedAt | formatMediumDatetime }}</td>
+              <td>{{ eventSource.startedAt | formatMediumDatetime }}</td>
+              <td>{{ eventSource.updatedAt | formatMediumDatetime }}</td>
+              <td>{{ eventSource.betBurgerId }}</td>
+              <td>{{ eventSource.koef }}</td>
+              <td>
+                @if (eventSource.bookmaker) {
+                  <div>
+                    <a [routerLink]="['/bookmaker', eventSource.bookmaker.id, 'view']">{{ eventSource.bookmaker.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (eventSource.sport) {
+                  <div>
+                    <a [routerLink]="['/sport', eventSource.sport.id, 'view']">{{ eventSource.sport.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (eventSource.period) {
+                  <div>
+                    <a [routerLink]="['/period', eventSource.period.id, 'view']">{{ eventSource.period.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (eventSource.betType) {
+                  <div>
+                    <a [routerLink]="['/bet-type', eventSource.betType.id, 'view']">{{ eventSource.betType.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/event-source', eventSource.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/event-source', eventSource.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(eventSource)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

@@ -1,0 +1,25 @@
+{
+  "betBurgerBotApp": {
+    "configParam": {
+      "home": {
+        "title": "Config Params",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Config Param",
+        "createOrEditLabel": "Create or edit a Config Param",
+        "notFound": "No Config Params found"
+      },
+      "created": "A new Config Param is created with identifier {{ param }}",
+      "updated": "A Config Param is updated with identifier {{ param }}",
+      "deleted": "A Config Param is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Config Param {{ id }}?"
+      },
+      "detail": {
+        "title": "Config Param"
+      },
+      "id": "ID",
+      "paramName": "Param Name",
+      "paramValue": "Param Value"
+    }
+  }
+}

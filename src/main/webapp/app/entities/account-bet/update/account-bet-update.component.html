@@ -1,0 +1,269 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-account-bet-heading"
+        data-cy="AccountBetCreateUpdateHeading"
+        jhiTranslate="betBurgerBotApp.accountBet.home.createOrEditLabel"
+      >
+        Create or edit a Account Bet
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          @if (editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)) {
+            <div></div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.state" for="field_state">State</label>
+          <select class="form-control" name="state" formControlName="state" id="field_state" data-cy="state">
+            <option [ngValue]="null">{{ 'betBurgerBotApp.AccountBetState.null' | translate }}</option>
+            @for (accountBetState of accountBetStateValues; track $index) {
+              <option [value]="accountBetState">{{ 'betBurgerBotApp.AccountBetState.' + accountBetState | translate }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.type" for="field_type">Type</label>
+          <select class="form-control" name="type" formControlName="type" id="field_type" data-cy="type">
+            <option [ngValue]="null">{{ 'betBurgerBotApp.AccountBetType.null' | translate }}</option>
+            @for (accountBetType of accountBetTypeValues; track $index) {
+              <option [value]="accountBetType">{{ 'betBurgerBotApp.AccountBetType.' + accountBetType | translate }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.bettingRoleType" for="field_bettingRoleType"
+            >Betting Role Type</label
+          >
+          <select
+            class="form-control"
+            name="bettingRoleType"
+            formControlName="bettingRoleType"
+            id="field_bettingRoleType"
+            data-cy="bettingRoleType"
+          >
+            <option [ngValue]="null">{{ 'betBurgerBotApp.BettingRoleType.null' | translate }}</option>
+            @for (bettingRoleType of bettingRoleTypeValues; track $index) {
+              <option [value]="bettingRoleType">{{ 'betBurgerBotApp.BettingRoleType.' + bettingRoleType | translate }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.bettingRoleAmount" for="field_bettingRoleAmount"
+            >Betting Role Amount</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="bettingRoleAmount"
+            id="field_bettingRoleAmount"
+            data-cy="bettingRoleAmount"
+            formControlName="bettingRoleAmount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.hourActiveActive" for="field_hourActiveActive"
+            >Hour Active Active</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hourActiveActive"
+            id="field_hourActiveActive"
+            data-cy="hourActiveActive"
+            formControlName="hourActiveActive"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.hourActiveEnd" for="field_hourActiveEnd"
+            >Hour Active End</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hourActiveEnd"
+            id="field_hourActiveEnd"
+            data-cy="hourActiveEnd"
+            formControlName="hourActiveEnd"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.flgActiveLun" for="field_flgActiveLun">Flg Active Lun</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="flgActiveLun"
+            id="field_flgActiveLun"
+            data-cy="flgActiveLun"
+            formControlName="flgActiveLun"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.flgActiveMar" for="field_flgActiveMar">Flg Active Mar</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="flgActiveMar"
+            id="field_flgActiveMar"
+            data-cy="flgActiveMar"
+            formControlName="flgActiveMar"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.flgActiveMer" for="field_flgActiveMer">Flg Active Mer</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="flgActiveMer"
+            id="field_flgActiveMer"
+            data-cy="flgActiveMer"
+            formControlName="flgActiveMer"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.flgActiveGio" for="field_flgActiveGio">Flg Active Gio</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="flgActiveGio"
+            id="field_flgActiveGio"
+            data-cy="flgActiveGio"
+            formControlName="flgActiveGio"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.flgActiveVen" for="field_flgActiveVen">Flg Active Ven</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="flgActiveVen"
+            id="field_flgActiveVen"
+            data-cy="flgActiveVen"
+            formControlName="flgActiveVen"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.flgActiveSab" for="field_flgActiveSab">Flg Active Sab</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="flgActiveSab"
+            id="field_flgActiveSab"
+            data-cy="flgActiveSab"
+            formControlName="flgActiveSab"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.flgActiveDom" for="field_flgActiveDom">Flg Active Dom</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="flgActiveDom"
+            id="field_flgActiveDom"
+            data-cy="flgActiveDom"
+            formControlName="flgActiveDom"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.whatsAppNumber" for="field_whatsAppNumber"
+            >Whats App Number</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="whatsAppNumber"
+            id="field_whatsAppNumber"
+            data-cy="whatsAppNumber"
+            formControlName="whatsAppNumber"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.userAccount" for="field_userAccount">User Account</label>
+          <input
+            type="text"
+            class="form-control"
+            name="userAccount"
+            id="field_userAccount"
+            data-cy="userAccount"
+            formControlName="userAccount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.passwordAccount" for="field_passwordAccount"
+            >Password Account</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="passwordAccount"
+            id="field_passwordAccount"
+            data-cy="passwordAccount"
+            formControlName="passwordAccount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.accountBet.bookmaker" for="field_bookmaker">Bookmaker</label>
+          <select
+            class="form-control"
+            id="field_bookmaker"
+            data-cy="bookmaker"
+            name="bookmaker"
+            formControlName="bookmaker"
+            [compareWith]="compareBookmaker"
+          >
+            <option [ngValue]="null"></option>
+            @for (bookmakerOption of bookmakersSharedCollection; track $index) {
+              <option [ngValue]="bookmakerOption">{{ bookmakerOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

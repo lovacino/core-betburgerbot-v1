@@ -1,0 +1,21 @@
+{
+  "annotations": {
+    "changelogDate": "20240410210334"
+  },
+  "applications": ["betBurgerBot"],
+  "entityTableName": "config_param",
+  "fields": [
+    {
+      "fieldName": "paramName",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "paramValue",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ConfigParam",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,226 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-event-source-heading"
+        data-cy="EventSourceCreateUpdateHeading"
+        jhiTranslate="betBurgerBotApp.eventSource.home.createOrEditLabel"
+      >
+        Translation missing for betBurgerBotApp.eventSource.home.createOrEditLabel
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.home" for="field_home">Home</label>
+          <input type="text" class="form-control" name="home" id="field_home" data-cy="home" formControlName="home" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.away" for="field_away">Away</label>
+          <input type="text" class="form-control" name="away" id="field_away" data-cy="away" formControlName="away" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.league" for="field_league">League</label>
+          <input type="text" class="form-control" name="league" id="field_league" data-cy="league" formControlName="league" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.eventName" for="field_eventName">Event Name</label>
+          <input type="text" class="form-control" name="eventName" id="field_eventName" data-cy="eventName" formControlName="eventName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.bookmakerEventId" for="field_bookmakerEventId"
+            >Bookmaker Event Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="bookmakerEventId"
+            id="field_bookmakerEventId"
+            data-cy="bookmakerEventId"
+            formControlName="bookmakerEventId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.betTypeParam" for="field_betTypeParam">Bet Type Param</label>
+          <input
+            type="number"
+            class="form-control"
+            name="betTypeParam"
+            id="field_betTypeParam"
+            data-cy="betTypeParam"
+            formControlName="betTypeParam"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.koefLastModifiedAt" for="field_koefLastModifiedAt"
+            >Koef Last Modified At</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_koefLastModifiedAt"
+              data-cy="koefLastModifiedAt"
+              type="datetime-local"
+              class="form-control"
+              name="koefLastModifiedAt"
+              formControlName="koefLastModifiedAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.scannedAt" for="field_scannedAt">Scanned At</label>
+          <div class="d-flex">
+            <input
+              id="field_scannedAt"
+              data-cy="scannedAt"
+              type="datetime-local"
+              class="form-control"
+              name="scannedAt"
+              formControlName="scannedAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.startedAt" for="field_startedAt">Started At</label>
+          <div class="d-flex">
+            <input
+              id="field_startedAt"
+              data-cy="startedAt"
+              type="datetime-local"
+              class="form-control"
+              name="startedAt"
+              formControlName="startedAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.updatedAt" for="field_updatedAt">Updated At</label>
+          <div class="d-flex">
+            <input
+              id="field_updatedAt"
+              data-cy="updatedAt"
+              type="datetime-local"
+              class="form-control"
+              name="updatedAt"
+              formControlName="updatedAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.betBurgerId" for="field_betBurgerId">Bet Burger Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="betBurgerId"
+            id="field_betBurgerId"
+            data-cy="betBurgerId"
+            formControlName="betBurgerId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.koef" for="field_koef">Koef</label>
+          <input type="number" class="form-control" name="koef" id="field_koef" data-cy="koef" formControlName="koef" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.bookmaker" for="field_bookmaker">Bookmaker</label>
+          <select
+            class="form-control"
+            id="field_bookmaker"
+            data-cy="bookmaker"
+            name="bookmaker"
+            formControlName="bookmaker"
+            [compareWith]="compareBookmaker"
+          >
+            <option [ngValue]="null"></option>
+            @for (bookmakerOption of bookmakersSharedCollection; track $index) {
+              <option [ngValue]="bookmakerOption">{{ bookmakerOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.sport" for="field_sport">Sport</label>
+          <select class="form-control" id="field_sport" data-cy="sport" name="sport" formControlName="sport" [compareWith]="compareSport">
+            <option [ngValue]="null"></option>
+            @for (sportOption of sportsSharedCollection; track $index) {
+              <option [ngValue]="sportOption">{{ sportOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.period" for="field_period">Period</label>
+          <select
+            class="form-control"
+            id="field_period"
+            data-cy="period"
+            name="period"
+            formControlName="period"
+            [compareWith]="comparePeriod"
+          >
+            <option [ngValue]="null"></option>
+            @for (periodOption of periodsSharedCollection; track $index) {
+              <option [ngValue]="periodOption">{{ periodOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="betBurgerBotApp.eventSource.betType" for="field_betType">Bet Type</label>
+          <select
+            class="form-control"
+            id="field_betType"
+            data-cy="betType"
+            name="betType"
+            formControlName="betType"
+            [compareWith]="compareBetType"
+          >
+            <option [ngValue]="null"></option>
+            @for (betTypeOption of betTypesSharedCollection; track $index) {
+              <option [ngValue]="betTypeOption">{{ betTypeOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

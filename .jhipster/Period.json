@@ -1,0 +1,17 @@
+{
+  "annotations": {
+    "changelogDate": "20240410210634"
+  },
+  "applications": ["betBurgerBot"],
+  "entityTableName": "period",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    }
+  ],
+  "name": "Period",
+  "relationships": [],
+  "searchEngine": "no"
+}

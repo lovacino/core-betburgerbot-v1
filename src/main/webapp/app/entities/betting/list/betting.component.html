@@ -1,0 +1,246 @@
+<div>
+  <h2 id="page-heading" data-cy="BettingHeading">
+    <span jhiTranslate="betBurgerBotApp.betting.home.title">Translation missing for betBurgerBotApp.betting.home.title</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="betBurgerBotApp.betting.home.refreshListLabel"
+          >Translation missing for betBurgerBotApp.betting.home.refreshListLabel</span
+        >
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-betting"
+        [routerLink]="['/betting/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="betBurgerBotApp.betting.home.createLabel"
+          >Translation missing for betBurgerBotApp.betting.home.createLabel</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (bettings?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="betBurgerBotApp.betting.home.notFound">Translation missing for betBurgerBotApp.betting.home.notFound</span>
+    </div>
+  }
+
+  @if (bettings && bettings.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="eventSourceId">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.eventSourceId">Event Source Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="betTypeParam">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.betTypeParam">Bet Type Param</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="koef">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.koef">Koef</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="home">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.home">Home</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="away">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.away">Away</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="league">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.league">League</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="eventName">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.eventName">Event Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="startedAt">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.startedAt">Started At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="updatedAt">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.updatedAt">Updated At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="betBurgerId">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.betBurgerId">Bet Burger Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="state">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.state">State</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="amountBet">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.amountBet">Amount Bet</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="amountBetWin">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.amountBetWin">Amount Bet Win</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="betResultType">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.betResultType">Bet Result Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="account.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.account">Account</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sport.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.sport">Sport</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="period.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.period">Period</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="betType.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.betting.betType">Bet Type</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (betting of bettings; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/betting', betting.id, 'view']">{{ betting.id }}</a>
+              </td>
+              <td>{{ betting.eventSourceId }}</td>
+              <td>{{ betting.betTypeParam }}</td>
+              <td>{{ betting.koef }}</td>
+              <td>{{ betting.home }}</td>
+              <td>{{ betting.away }}</td>
+              <td>{{ betting.league }}</td>
+              <td>{{ betting.eventName }}</td>
+              <td>{{ betting.startedAt | formatMediumDatetime }}</td>
+              <td>{{ betting.updatedAt | formatMediumDatetime }}</td>
+              <td>{{ betting.betBurgerId }}</td>
+              <td jhiTranslate="{{ 'betBurgerBotApp.BettingState.' + betting.state }}">{{ betting.state }}</td>
+              <td>{{ betting.amountBet }}</td>
+              <td>{{ betting.amountBetWin }}</td>
+              <td jhiTranslate="{{ 'betBurgerBotApp.BetResultType.' + betting.betResultType }}">{{ betting.betResultType }}</td>
+              <td>
+                @if (betting.account) {
+                  <div>
+                    <a [routerLink]="['/account-bet', betting.account.id, 'view']">{{ betting.account.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (betting.sport) {
+                  <div>
+                    <a [routerLink]="['/sport', betting.sport.id, 'view']">{{ betting.sport.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (betting.period) {
+                  <div>
+                    <a [routerLink]="['/period', betting.period.id, 'view']">{{ betting.period.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (betting.betType) {
+                  <div>
+                    <a [routerLink]="['/bet-type', betting.betType.id, 'view']">{{ betting.betType.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/betting', betting.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/betting', betting.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(betting)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

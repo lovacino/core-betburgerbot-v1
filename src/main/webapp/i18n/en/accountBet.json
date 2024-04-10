@@ -1,0 +1,41 @@
+{
+  "betBurgerBotApp": {
+    "accountBet": {
+      "home": {
+        "title": "Account Bets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Account Bet",
+        "createOrEditLabel": "Create or edit a Account Bet",
+        "notFound": "No Account Bets found"
+      },
+      "created": "A new Account Bet is created with identifier {{ param }}",
+      "updated": "A Account Bet is updated with identifier {{ param }}",
+      "deleted": "A Account Bet is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Account Bet {{ id }}?"
+      },
+      "detail": {
+        "title": "Account Bet"
+      },
+      "id": "ID",
+      "name": "Name",
+      "state": "State",
+      "type": "Type",
+      "bettingRoleType": "Betting Role Type",
+      "bettingRoleAmount": "Betting Role Amount",
+      "hourActiveActive": "Hour Active Active",
+      "hourActiveEnd": "Hour Active End",
+      "flgActiveLun": "Flg Active Lun",
+      "flgActiveMar": "Flg Active Mar",
+      "flgActiveMer": "Flg Active Mer",
+      "flgActiveGio": "Flg Active Gio",
+      "flgActiveVen": "Flg Active Ven",
+      "flgActiveSab": "Flg Active Sab",
+      "flgActiveDom": "Flg Active Dom",
+      "whatsAppNumber": "Whats App Number",
+      "userAccount": "User Account",
+      "passwordAccount": "Password Account",
+      "bookmaker": "Bookmaker"
+    }
+  }
+}

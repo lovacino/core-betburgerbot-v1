@@ -1,0 +1,133 @@
+
+application {
+  config {
+    baseName betBurgerBot
+    applicationType monolith
+    packageName it.lovacino.betburger.bot
+    authenticationType jwt
+    prodDatabaseType mysql
+    clientFramework angularX
+  }
+  entities *
+}
+
+enum AccountBetType {
+	WHATSAPP,
+    ONLINEBOT
+}
+
+enum BettingRoleType {
+	FIXED_BET,
+    FIXED_WIN
+}
+
+enum BettingState{
+	CREATED,
+    SENDING,
+    SENDED,
+    CONFIRMED,
+    ERROR
+}
+
+enum BookmakerState{
+	ACTIVE,
+    INACTIVE
+}
+
+enum BetResultType{
+	WIN,
+    LOSE
+}
+
+enum AccountBetState{
+	ACTIVE,
+    INACTIVE,
+    CLOSED
+}
+
+entity Bookmaker {
+	name String unique,
+	state BookmakerState
+}
+
+entity AccountBet {
+	name String unique,
+	state AccountBetState,
+	type AccountBetType,
+	bettingRoleType BettingRoleType,
+	bettingRoleAmount Double,
+	hourActiveActive Integer,
+	hourActiveEnd Integer,
+	flgActiveLun Boolean,
+	flgActiveMar Boolean,
+	flgActiveMer Boolean,
+	flgActiveGio Boolean,
+	flgActiveVen Boolean,
+	flgActiveSab Boolean,
+	flgActiveDom Boolean,
+	whatsAppNumber String,
+	userAccount String,
+	passwordAccount String
+}
+
+entity ConfigParam {
+	paramName String unique,
+    paramValue String
+}
+
+entity Sport {name String unique}
+
+entity BetType {name String unique}
+
+entity Period {name String unique}
+
+entity EventSource {
+	home String,
+    away String,
+    league String,
+    eventName String,
+    bookmakerEventId Long,
+    betTypeParam Double,
+    koefLastModifiedAt ZonedDateTime,
+    scannedAt ZonedDateTime,
+    startedAt ZonedDateTime,
+    updatedAt ZonedDateTime,
+    betBurgerId String,
+    koef Double
+}
+
+entity Betting {
+	eventSourceId Long,
+    betTypeParam Double,
+    koef Double,
+    home String,
+    away String,
+    league String,
+    eventName String,
+    startedAt ZonedDateTime,
+    updatedAt ZonedDateTime,
+    betBurgerId String,
+	state BettingState,
+    amountBet Double,
+    amountBetWin Double,
+    betResultType BetResultType
+}
+
+
+relationship ManyToOne {
+	EventSource{bookmaker} to Bookmaker
+	EventSource{sport} to Sport
+	EventSource{period} to Period
+	EventSource{betType} to BetType
+}
+
+relationship ManyToOne {
+	Betting{account} to AccountBet
+	Betting{sport} to Sport
+	Betting{period} to Period
+	Betting{betType} to BetType
+}
+
+relationship ManyToOne {
+	AccountBet{bookmaker} to Bookmaker
+}

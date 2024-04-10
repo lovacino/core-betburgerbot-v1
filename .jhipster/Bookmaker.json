@@ -1,0 +1,22 @@
+{
+  "annotations": {
+    "changelogDate": "20240410210134"
+  },
+  "applications": ["betBurgerBot"],
+  "entityTableName": "bookmaker",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "BookmakerState",
+      "fieldValues": "ACTIVE,INACTIVE"
+    }
+  ],
+  "name": "Bookmaker",
+  "relationships": [],
+  "searchEngine": "no"
+}

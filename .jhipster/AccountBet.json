@@ -1,0 +1,91 @@
+{
+  "annotations": {
+    "changelogDate": "20240410210234"
+  },
+  "applications": ["betBurgerBot"],
+  "entityTableName": "account_bet",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "AccountBetState",
+      "fieldValues": "ACTIVE,INACTIVE,CLOSED"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "AccountBetType",
+      "fieldValues": "WHATSAPP,ONLINEBOT"
+    },
+    {
+      "fieldName": "bettingRoleType",
+      "fieldType": "BettingRoleType",
+      "fieldValues": "FIXED_BET,FIXED_WIN"
+    },
+    {
+      "fieldName": "bettingRoleAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "hourActiveActive",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hourActiveEnd",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "flgActiveLun",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flgActiveMar",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flgActiveMer",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flgActiveGio",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flgActiveVen",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flgActiveSab",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "flgActiveDom",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "whatsAppNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userAccount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "passwordAccount",
+      "fieldType": "String"
+    }
+  ],
+  "name": "AccountBet",
+  "relationships": [
+    {
+      "otherEntityName": "bookmaker",
+      "relationshipName": "bookmaker",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

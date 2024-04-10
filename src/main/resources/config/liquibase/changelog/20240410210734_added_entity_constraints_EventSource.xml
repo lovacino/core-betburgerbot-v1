@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity EventSource.
+    -->
+    <changeSet id="20240410210734-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="bookmaker_id"
+                                 baseTableName="event_source"
+                                 constraintName="fk_event_source__bookmaker_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bookmaker"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="sport_id"
+                                 baseTableName="event_source"
+                                 constraintName="fk_event_source__sport_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sport"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="period_id"
+                                 baseTableName="event_source"
+                                 constraintName="fk_event_source__period_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="period"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="bet_type_id"
+                                 baseTableName="event_source"
+                                 constraintName="fk_event_source__bet_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bet_type"
+                                 />
+    </changeSet>
+</databaseChangeLog>

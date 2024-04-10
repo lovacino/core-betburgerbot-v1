@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (configParam) {
+      <div>
+        <h2 data-cy="configParamDetailsHeading"><span jhiTranslate="betBurgerBotApp.configParam.detail.title">Config Param</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ configParam.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.configParam.paramName">Param Name</span></dt>
+          <dd>
+            <span>{{ configParam.paramName }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.configParam.paramValue">Param Value</span></dt>
+          <dd>
+            <span>{{ configParam.paramValue }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/config-param', configParam.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

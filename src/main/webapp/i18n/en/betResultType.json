@@ -1,0 +1,9 @@
+{
+  "betBurgerBotApp": {
+    "BetResultType": {
+      "null": "",
+      "WIN": "WIN",
+      "LOSE": "LOSE"
+    }
+  }
+}

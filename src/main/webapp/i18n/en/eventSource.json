@@ -1,0 +1,39 @@
+{
+  "betBurgerBotApp": {
+    "eventSource": {
+      "home": {
+        "title": "Event Sources",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Event Source",
+        "createOrEditLabel": "Create or edit a Event Source",
+        "notFound": "No Event Sources found"
+      },
+      "created": "A new Event Source is created with identifier {{ param }}",
+      "updated": "A Event Source is updated with identifier {{ param }}",
+      "deleted": "A Event Source is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Event Source {{ id }}?"
+      },
+      "detail": {
+        "title": "Event Source"
+      },
+      "id": "ID",
+      "home": "Home",
+      "away": "Away",
+      "league": "League",
+      "eventName": "Event Name",
+      "bookmakerEventId": "Bookmaker Event Id",
+      "betTypeParam": "Bet Type Param",
+      "koefLastModifiedAt": "Koef Last Modified At",
+      "scannedAt": "Scanned At",
+      "startedAt": "Started At",
+      "updatedAt": "Updated At",
+      "betBurgerId": "Bet Burger Id",
+      "koef": "Koef",
+      "bookmaker": "Bookmaker",
+      "sport": "Sport",
+      "period": "Period",
+      "betType": "Bet Type"
+    }
+  }
+}

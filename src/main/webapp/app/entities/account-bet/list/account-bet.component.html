@@ -1,0 +1,227 @@
+<div>
+  <h2 id="page-heading" data-cy="AccountBetHeading">
+    <span jhiTranslate="betBurgerBotApp.accountBet.home.title">Account Bets</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="betBurgerBotApp.accountBet.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-account-bet"
+        [routerLink]="['/account-bet/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="betBurgerBotApp.accountBet.home.createLabel">Create a new Account Bet</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (accountBets?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="betBurgerBotApp.accountBet.home.notFound">No Account Bets found</span>
+    </div>
+  }
+
+  @if (accountBets && accountBets.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="state">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.state">State</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="type">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.type">Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="bettingRoleType">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.bettingRoleType">Betting Role Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="bettingRoleAmount">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.bettingRoleAmount">Betting Role Amount</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hourActiveActive">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.hourActiveActive">Hour Active Active</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hourActiveEnd">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.hourActiveEnd">Hour Active End</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="flgActiveLun">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.flgActiveLun">Flg Active Lun</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="flgActiveMar">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.flgActiveMar">Flg Active Mar</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="flgActiveMer">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.flgActiveMer">Flg Active Mer</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="flgActiveGio">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.flgActiveGio">Flg Active Gio</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="flgActiveVen">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.flgActiveVen">Flg Active Ven</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="flgActiveSab">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.flgActiveSab">Flg Active Sab</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="flgActiveDom">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.flgActiveDom">Flg Active Dom</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="whatsAppNumber">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.whatsAppNumber">Whats App Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="userAccount">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.userAccount">User Account</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="passwordAccount">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.passwordAccount">Password Account</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="bookmaker.id">
+              <div class="d-flex">
+                <span jhiTranslate="betBurgerBotApp.accountBet.bookmaker">Bookmaker</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (accountBet of accountBets; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/account-bet', accountBet.id, 'view']">{{ accountBet.id }}</a>
+              </td>
+              <td>{{ accountBet.name }}</td>
+              <td jhiTranslate="{{ 'betBurgerBotApp.AccountBetState.' + accountBet.state }}">{{ accountBet.state }}</td>
+              <td jhiTranslate="{{ 'betBurgerBotApp.AccountBetType.' + accountBet.type }}">{{ accountBet.type }}</td>
+              <td jhiTranslate="{{ 'betBurgerBotApp.BettingRoleType.' + accountBet.bettingRoleType }}">{{ accountBet.bettingRoleType }}</td>
+              <td>{{ accountBet.bettingRoleAmount }}</td>
+              <td>{{ accountBet.hourActiveActive }}</td>
+              <td>{{ accountBet.hourActiveEnd }}</td>
+              <td>{{ accountBet.flgActiveLun }}</td>
+              <td>{{ accountBet.flgActiveMar }}</td>
+              <td>{{ accountBet.flgActiveMer }}</td>
+              <td>{{ accountBet.flgActiveGio }}</td>
+              <td>{{ accountBet.flgActiveVen }}</td>
+              <td>{{ accountBet.flgActiveSab }}</td>
+              <td>{{ accountBet.flgActiveDom }}</td>
+              <td>{{ accountBet.whatsAppNumber }}</td>
+              <td>{{ accountBet.userAccount }}</td>
+              <td>{{ accountBet.passwordAccount }}</td>
+              <td>
+                @if (accountBet.bookmaker) {
+                  <div>
+                    <a [routerLink]="['/bookmaker', accountBet.bookmaker.id, 'view']">{{ accountBet.bookmaker.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/account-bet', accountBet.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/account-bet', accountBet.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(accountBet)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

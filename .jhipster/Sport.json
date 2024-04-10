@@ -1,0 +1,17 @@
+{
+  "annotations": {
+    "changelogDate": "20240410210434"
+  },
+  "applications": ["betBurgerBot"],
+  "entityTableName": "sport",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    }
+  ],
+  "name": "Sport",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,9 @@
+{
+  "betBurgerBotApp": {
+    "AccountBetType": {
+      "null": "",
+      "WHATSAPP": "WHATSAPP",
+      "ONLINEBOT": "ONLINEBOT"
+    }
+  }
+}

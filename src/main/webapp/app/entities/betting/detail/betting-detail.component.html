@@ -1,0 +1,118 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (betting) {
+      <div>
+        <h2 data-cy="bettingDetailsHeading"><span jhiTranslate="betBurgerBotApp.betting.detail.title">Betting</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ betting.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.eventSourceId">Event Source Id</span></dt>
+          <dd>
+            <span>{{ betting.eventSourceId }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.betTypeParam">Bet Type Param</span></dt>
+          <dd>
+            <span>{{ betting.betTypeParam }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.koef">Koef</span></dt>
+          <dd>
+            <span>{{ betting.koef }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.home">Home</span></dt>
+          <dd>
+            <span>{{ betting.home }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.away">Away</span></dt>
+          <dd>
+            <span>{{ betting.away }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.league">League</span></dt>
+          <dd>
+            <span>{{ betting.league }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.eventName">Event Name</span></dt>
+          <dd>
+            <span>{{ betting.eventName }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.startedAt">Started At</span></dt>
+          <dd>
+            <span>{{ betting.startedAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.updatedAt">Updated At</span></dt>
+          <dd>
+            <span>{{ betting.updatedAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.betBurgerId">Bet Burger Id</span></dt>
+          <dd>
+            <span>{{ betting.betBurgerId }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.state">State</span></dt>
+          <dd>
+            <span jhiTranslate="{{ 'betBurgerBotApp.BettingState.' + betting.state }}">{{ betting.state }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.amountBet">Amount Bet</span></dt>
+          <dd>
+            <span>{{ betting.amountBet }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.amountBetWin">Amount Bet Win</span></dt>
+          <dd>
+            <span>{{ betting.amountBetWin }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.betResultType">Bet Result Type</span></dt>
+          <dd>
+            <span jhiTranslate="{{ 'betBurgerBotApp.BetResultType.' + betting.betResultType }}">{{ betting.betResultType }}</span>
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.account">Account</span></dt>
+          <dd>
+            @if (betting.account) {
+              <div>
+                <a [routerLink]="['/account-bet', betting.account.id, 'view']">{{ betting.account.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.sport">Sport</span></dt>
+          <dd>
+            @if (betting.sport) {
+              <div>
+                <a [routerLink]="['/sport', betting.sport.id, 'view']">{{ betting.sport.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.period">Period</span></dt>
+          <dd>
+            @if (betting.period) {
+              <div>
+                <a [routerLink]="['/period', betting.period.id, 'view']">{{ betting.period.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="betBurgerBotApp.betting.betType">Bet Type</span></dt>
+          <dd>
+            @if (betting.betType) {
+              <div>
+                <a [routerLink]="['/bet-type', betting.betType.id, 'view']">{{ betting.betType.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/betting', betting.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

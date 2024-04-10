@@ -1,0 +1,24 @@
+{
+  "betBurgerBotApp": {
+    "betType": {
+      "home": {
+        "title": "Bet Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bet Type",
+        "createOrEditLabel": "Create or edit a Bet Type",
+        "notFound": "No Bet Types found"
+      },
+      "created": "A new Bet Type is created with identifier {{ param }}",
+      "updated": "A Bet Type is updated with identifier {{ param }}",
+      "deleted": "A Bet Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bet Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Bet Type"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

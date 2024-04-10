@@ -1,0 +1,9 @@
+{
+  "betBurgerBotApp": {
+    "BettingRoleType": {
+      "null": "",
+      "FIXED_BET": "FIXED_BET",
+      "FIXED_WIN": "FIXED_WIN"
+    }
+  }
+}

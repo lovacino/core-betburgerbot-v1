@@ -1,0 +1,25 @@
+{
+  "betBurgerBotApp": {
+    "bookmaker": {
+      "home": {
+        "title": "Bookmakers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Bookmaker",
+        "createOrEditLabel": "Create or edit a Bookmaker",
+        "notFound": "No Bookmakers found"
+      },
+      "created": "A new Bookmaker is created with identifier {{ param }}",
+      "updated": "A Bookmaker is updated with identifier {{ param }}",
+      "deleted": "A Bookmaker is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Bookmaker {{ id }}?"
+      },
+      "detail": {
+        "title": "Bookmaker"
+      },
+      "id": "ID",
+      "name": "Name",
+      "state": "State"
+    }
+  }
+}

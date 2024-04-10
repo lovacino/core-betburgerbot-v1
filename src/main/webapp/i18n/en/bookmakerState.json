@@ -1,0 +1,9 @@
+{
+  "betBurgerBotApp": {
+    "BookmakerState": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "INACTIVE": "INACTIVE"
+    }
+  }
+}

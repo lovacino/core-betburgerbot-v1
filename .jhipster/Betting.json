@@ -1,0 +1,95 @@
+{
+  "annotations": {
+    "changelogDate": "20240410210834"
+  },
+  "applications": ["betBurgerBot"],
+  "entityTableName": "betting",
+  "fields": [
+    {
+      "fieldName": "eventSourceId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "betTypeParam",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "koef",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "home",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "away",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "league",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "eventName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "betBurgerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "BettingState",
+      "fieldValues": "CREATED,SENDING,SENDED,CONFIRMED,ERROR"
+    },
+    {
+      "fieldName": "amountBet",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "amountBetWin",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "betResultType",
+      "fieldType": "BetResultType",
+      "fieldValues": "WIN,LOSE"
+    }
+  ],
+  "name": "Betting",
+  "relationships": [
+    {
+      "otherEntityName": "accountBet",
+      "relationshipName": "account",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "sport",
+      "relationshipName": "sport",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "period",
+      "relationshipName": "period",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "betType",
+      "relationshipName": "betType",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
